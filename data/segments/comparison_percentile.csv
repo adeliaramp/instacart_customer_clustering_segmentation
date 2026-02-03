@@ -1,0 +1,6 @@
+Criterion,Median (50/50),Percentile (20/80)
+Visual Separation,Poor - heavy overlap,Good - clear corners
+Extreme Group ID,No - mixes extreme & typical,Yes - top/bottom 20%
+Average Acknowledgment,No,Yes - explicit Average
+Business Actionability,Low,High
+Honest About Data,No - hides homogeneity,Yes - shows 65% average

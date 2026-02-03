@@ -1,0 +1,12 @@
+Metric,Value,Status
+Total Users (Qualified),"182,223",✅ Excellent
+Total Orders,"3,325,139",✅ Strong
+Orders per User (Median),12,✅ Adequate
+Mean Days Between Orders,14.81,✅ Good
+CV (Median),0.587,✅ Moderate
+% Users with CV < 1.0,95.7%,✅ Strong Pattern
+Mean Hour (Circular),13.71,✅ Afternoon Peak
+Std Hour (Circular),3.47,✅ Moderate Variance
+Unique Products (Median),54,✅ Low (Expected)
+Catalog Coverage (Median),0.109%,✅ Sparse (Expected)
+Avg Basket Size (Median),8.17,✅ Typical

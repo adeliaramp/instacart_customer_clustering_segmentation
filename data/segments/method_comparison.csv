@@ -1,0 +1,5 @@
+Criterion,Clustering,Rule-Based
+Statistical Quality,Failed (silh <0.2),Valid (ANOVA p<0.05)
+Interpretability,Low (PCA dims),High (freq × loyalty)
+Production Complexity,High (model serving),Low (simple logic)
+Stability,Low (random init),High (deterministic)

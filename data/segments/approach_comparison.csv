@@ -1,0 +1,11 @@
+Criterion,Clustering (PCA-50),Clustering (Behavioral),Rule-Based (This Notebook)
+Interpretability,Low (PC components),Medium (14 features),High (freq × loyalty)
+Actionability,Medium,Medium,High
+Stability,Low (random init),Low (random init),High (deterministic)
+Statistical Quality,Poor (silh 0.104),Poor (silh 0.190),Excellent (ANOVA p<0.05)
+Segment Balance,Good (median splits),Good (median splits),Excellent (perfect 25%)
+Business Relevance,Unclear,Medium,High (business-driven)
+Implementation Complexity,High,Medium,Low
+New Customer Assignment,Complex (PCA required),Medium (need features),Simple (2 metrics)
+Stakeholder Understanding,Low,Medium,High
+Overall Score,3/10 ❌,4/10 ❌,9/10 ✅
