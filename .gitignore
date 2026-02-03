@@ -9,5 +9,10 @@ __pycache__/
 # OS
 .DS_Store
 
-# Large raw data (optional)
+# Large raw data
 data/raw/
+
+# big generated artifacts
+data/processed_features/
+data/**/*.parquet
+
