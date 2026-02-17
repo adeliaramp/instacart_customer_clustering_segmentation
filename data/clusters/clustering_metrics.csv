@@ -1,0 +1,2 @@
+algorithm_selected,matrix_variant,n_clusters,silhouette_score,calinski_harabasz,davies_bouldin,smallest_cluster_pct,stability_seed_ari,stability_bootstrap_ari
+KMeans,pruned,3,0.10491023678859918,6113.3522530786995,3.8376521980822336,5.504244798955126,0.997038949449534,0.9856946777142385

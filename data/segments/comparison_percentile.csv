@@ -1,6 +1,8 @@
-Criterion,Median (50/50),Percentile (20/80)
-Visual Separation,Poor - heavy overlap,Good - clear corners
-Extreme Group ID,No - mixes extreme & typical,Yes - top/bottom 20%
-Average Acknowledgment,No,Yes - explicit Average
-Business Actionability,Low,High
-Honest About Data,No - hides homogeneity,Yes - shows 65% average
+Criterion,Clustering (04/04b/04c),Rule-Based 4-Segment (Notebook 05)
+Primary objective,Discover natural structure,Operational segmentation for all users
+Separation quality in this project,"Improved to ~0.19 at best, still moderate/weak",Deterministic quadrant boundaries
+Interpretability for stakeholders,Medium (needs model context),High (plain-language thresholds)
+Assignment stability,Depends on feature set and k,High (deterministic)
+Coverage,High (all users assigned),High (all users assigned)
+Campaign readiness,Medium,High
+Best use in this portfolio,Exploratory evidence + model diagnostics,Production-facing lifecycle segmentation

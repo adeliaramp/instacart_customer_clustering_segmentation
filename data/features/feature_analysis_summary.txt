@@ -1,68 +1,39 @@
 
-NOTEBOOK 02: FEATURE ENGINEERING - ANALYSIS SUMMARY
+NOTEBOOK 02: FEATURE ENGINEERING SUMMARY
 ======================================================================
 
-FEATURE MATRIX:
+WHAT THIS NOTEBOOK DELIVERED:
+  - Built a user-level feature matrix ready for modeling
+  - Preserved interpretability while reducing product-level sparsity issues
+  - Validated cross-notebook consistency for shared metrics
+
+FEATURE MATRIX STATS:
   Users:           182,223
   Features:        149
   Missing values:  0
   Memory:          208.54 MB
 
-FEATURE BREAKDOWN:
+FEATURE GROUPS:
   Aisle preferences:  135
   Reorder behavior:   3
   Temporal:           4
   Basket composition: 5
   Diversity:          3
 
-CRITICAL DECISIONS:
+KEY DECISIONS:
+1) Low-variance aisle features: KEEP (let PCA downweight them)
+2) High-correlation behavioral pairs: KEEP (complementary semantics)
+3) Skewed distributions: no transform here; handle via scaling in Notebook 03
+4) Outliers: KEEP (legitimate heavy-user behavior, not data errors)
 
-1. LOW-VARIANCE FEATURES:
-   - Finding: 118 aisle features have variance < 0.001 (79% of aisles)
-   - These represent unpopular aisles (>99% of users have 0% purchases)
-   - Decision: KEEP ALL for PCA
-   - Rationale: PCA naturally downweights low-variance features
-                Preserves information for rare but potentially informative categories
-                Standard practice in dimensionality reduction workflows
-
-2. HIGH CORRELATION:
-   - reorder_ratio <-> pct_reordered_products: r = 0.888
-   - avg_basket_size <-> max_basket_size: r = 0.864
-   - unique_products <-> unique_aisles: r ≈ 0.7-0.8
-   - Decision: KEEP ALL correlated features
-   - Rationale: Correlation < 0.95 (not perfectly redundant)
-                Each captures complementary behavioral aspects
-                PCA will combine into composite components
-
-3. FEATURE VALIDATION:
-   - All features cross-validated against Notebook 01 calculations
-   - Max difference: < 0.0001 (floating point tolerance)
-   - Result: ✅ VALIDATED
-
-4. SKEWNESS:
-   - Several features show moderate-to-high skewness (|skew| > 1.0)
-   - Decision: NO TRANSFORMATION
-   - Rationale: StandardScaler sufficient for normalization
-                PCA robust to moderate skewness
-                Log transform would complicate interpretation
-
-5. OUTLIERS:
-   - Detected outliers in unique_products, avg_basket_size, etc.
-   - Investigation: Outliers are legitimate (power users, heavy shoppers)
-   - Decision: KEEP ALL
-   - Rationale: Represent real behavioral variation
-                May form distinct segments
-                StandardScaler will reduce impact
-
-REQUIREMENTS FOR NOTEBOOK 03:
-  1. Apply StandardScaler (zero mean, unit variance)
-  2. PCA on aisle features (134 → 30-50 components, 90-95% variance)
-  3. Combine PCA components with behavioral features
-  4. Final matrix: 40-60 total features
-  5. Validate: No NaNs, no Infs, all features scaled
+READY FOR NOTEBOOK 03:
+  - Apply StandardScaler
+  - Run PCA (especially aisle block)
+  - Combine reduced components with core behavioral features
+  - Verify scaled matrix has no NaN/Inf
 
 OUTPUTS:
   - feature_matrix.parquet
   - feature_descriptions.csv
   - feature_quality_report.csv
-  - feature_analysis_summary.txt (this file)
+  - feature_analysis_summary.txt

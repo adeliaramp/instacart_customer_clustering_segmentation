@@ -1,0 +1,4 @@
+approach,n_features,silhouette,k
+04c_non_aisle_features,14.0,0.190982828055301,2
+notebook_04_pruned_matrix,,0.1049102367885991,3
+04b_all_features,149.0,-0.0080046172873493,3

@@ -1,0 +1,4 @@
+* text=auto
+
+# Keep notebooks as text in Git and mark for linguist clarity
+*.ipynb text linguist-documentation

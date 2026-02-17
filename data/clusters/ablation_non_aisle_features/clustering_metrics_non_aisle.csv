@@ -1,0 +1,2 @@
+feature_set,n_features,n_clusters,silhouette_score,calinski_harabasz,davies_bouldin,smallest_cluster_pct,k2_skipped,grid_sample_n,eval_sample_n,winsor_lo,winsor_hi,algo_full_fit
+non_aisle_features,14,2,0.190982828055301,6641.889228072072,1.8219969457137744,40.555253727575554,False,60000,25000,0.005,0.995,MiniBatchKMeans

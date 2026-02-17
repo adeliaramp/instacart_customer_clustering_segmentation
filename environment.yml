@@ -1,0 +1,17 @@
+name: instacart-segmentation
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+      - numpy==1.26.4
+      - pandas==2.2.2
+      - scipy==1.13.1
+      - scikit-learn==1.5.1
+      - matplotlib==3.9.1
+      - seaborn==0.13.2
+      - jupyter==1.0.0
+      - notebook==7.2.1
+      - ipykernel==6.29.5
+      - plotly==5.23.0

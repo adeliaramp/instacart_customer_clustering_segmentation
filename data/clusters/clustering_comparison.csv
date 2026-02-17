@@ -1,4 +1,4 @@
-Algorithm,K,Silhouette,Calinski-Harabasz,Davies-Bouldin,Smallest Cluster %,Runtime,Dataset
-K-Means,2,0.09875107640983026,6475.425678616806,4.7476927442625865,39.197576595709656,Fast (~3-5 min),Full (182k)
-Hierarchical,Skipped,N/A,N/A,N/A,N/A,Skipped,N/A
-DBSCAN,0,N/A,N/A,N/A,N/A,Moderate (~3 min),Sample (20k)
+Algorithm,K,Silhouette,Calinski-Harabasz,Davies-Bouldin,Smallest Cluster %,Matrix Variant
+K-Means,3,0.10491023678859918,6113.3522530786995,3.8376521980822336,5.504244798955126,pruned
+Hierarchical(sample),3,0.0879863971038245,423.11700963307504,4.222644444353211,9.51,pruned
+DBSCAN(sample),0,,,,,pruned
