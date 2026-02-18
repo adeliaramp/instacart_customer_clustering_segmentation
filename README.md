@@ -6,14 +6,58 @@ This project asks a practical product question:
 
 Short answer: pure unsupervised clustering was not strong enough, so the final recommendation is a deterministic 4-segment rule-based framework.
 
-## Hiring Manager Packet
+## Visual Highlights
 
-- Executive one-page summary: `EXEC_SUMMARY.md`
-- Canonical case storyline: `docs/00_canonical_case_story.md`
-- Decision memo: `docs/01_decision_memo.md`
-- Segment action playbook: `docs/02_segment_action_playbook.md`
-- A/B experiment plan: `docs/03_experiment_plan.md`
-- Monitoring and retraining plan: `docs/04_monitoring_and_retraining_plan.md`
+### 1) Data Readiness Checks
+
+<img src="visualizations/01_orders_per_user_distribution.png" alt="Orders per user distribution" width="900">
+
+This distribution checks whether users have enough purchase history to support segmentation. The key signal is coverage: we want enough repeat behavior per user so downstream features are not mostly noise.
+
+<img src="visualizations/02_temporal_stability_analysis.png" alt="Temporal stability analysis" width="900">
+
+This plot tests whether behavior is stable enough over time to treat segments as meaningful patterns instead of short-lived spikes.
+
+### 2) Feature Space and Reduction
+
+<img src="visualizations/04_correlation_matrix.png" alt="Feature correlation matrix" width="900">
+
+Correlation review helps catch redundancy early. Highly overlapping features can inflate complexity without improving segmentation quality.
+
+<img src="visualizations/01_pca_variance_explained.png" alt="PCA variance explained" width="900">
+
+The PCA curve shows how much variance is retained as components increase. This was used to decide whether dimensionality reduction improved signal-to-noise before clustering.
+
+### 3) Clustering Diagnostics
+
+<img src="data/clusters/kmeans_optimization.png" alt="KMeans optimization" width="900">
+
+This optimization view compares candidate `k` values with objective metrics. It helps avoid arbitrary cluster-count choices.
+
+<img src="data/clusters/silhouette_analysis.png" alt="Silhouette analysis" width="900">
+
+Silhouette analysis quantifies separation quality. In this project, scores stayed moderate/weak, which is why clustering was kept as exploratory evidence rather than final assignment logic.
+
+### 4) Final Production Segmentation
+
+<img src="data/segments/segmentation_percentile.png" alt="Final segmentation chart" width="900">
+
+This is the final deterministic segmentation framework used for production-style assignment. Every user is mapped to one clear segment.
+
+<img src="data/segments/segment_distributions_percentile.png" alt="Segment distributions" width="900">
+
+Segment distribution acts as a sanity check for operational use: no collapsed segment, no extreme imbalance, and full user coverage.
+
+## If You’re Reviewing This Project
+
+Start here for the quickest full-picture read:
+
+- One-page overview: `EXEC_SUMMARY.md`
+- End-to-end review path: `docs/00_canonical_case_story.md`
+- Final recommendation and evidence: `docs/01_decision_memo.md`
+- Segment actions by audience: `docs/02_segment_action_playbook.md`
+- Validation experiment design: `docs/03_experiment_plan.md`
+- Monitoring and recalibration plan: `docs/04_monitoring_and_retraining_plan.md`
 
 ## Project Snapshot
 
